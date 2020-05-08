@@ -1,0 +1,10 @@
+<mat-card>
+    <mat-card-title>{{palette.name}}</mat-card-title>
+    <mat-card-content>
+        <mat-grid-list [cols]="palette.blocks.length > 4 ? 5 : palette.blocks.length">
+            <mat-grid-tile *ngFor="let block of palette.blocks">
+                <img [src]="block.imageUrl">
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card>

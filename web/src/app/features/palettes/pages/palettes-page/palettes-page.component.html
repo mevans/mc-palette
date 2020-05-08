@@ -1,0 +1,22 @@
+<ng-container *ngIf="{
+    initialising: initialising$ | async,
+    palettes: palettes$ | async
+} as pageData; else loading">
+    <ng-container *ngIf="pageData.initialising">
+        <ng-container *ngTemplateOutlet="loading">
+        </ng-container>
+    </ng-container>
+    <ng-container *ngIf="!pageData.initialising">
+        <mat-grid-list cols="3">
+            <mat-grid-tile *ngFor="let palette of pageData.palettes">
+                <app-palette-card
+                    [palette]="palette">
+                </app-palette-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </ng-container>
+</ng-container>
+
+<ng-template #loading>
+    <mat-spinner></mat-spinner>
+</ng-template>
