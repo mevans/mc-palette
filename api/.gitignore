@@ -23,6 +23,14 @@ media
 .idea/**/libraries
 *.iws /out/
 
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
 # Python #
 *.py[cod]
 *$py.class
